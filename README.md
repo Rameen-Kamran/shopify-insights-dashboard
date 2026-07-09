@@ -19,7 +19,7 @@ Built to be simple and readable — plain JavaScript, no TypeScript, no magic.
 | Backend   | Node.js + Express                                 |
 | Database  | MySQL 8 (native, `localhost:3306`)                |
 | ORM       | Sequelize + `mysql2` driver                       |
-| External  | Shopify Admin REST API (`2024-01`)                |
+| External  | Shopify Admin REST API (`2026-07`)                |
 
 ---
 
@@ -139,7 +139,7 @@ Fill in `.env`:
 | `DB_USER` / `DB_PASSWORD`| Your MySQL credentials                                  |
 | `SHOPIFY_STORE_URL`      | `your-store.myshopify.com` (no `https://`)              |
 | `SHOPIFY_ADMIN_TOKEN`    | Admin API access token (`shpat_...`)                    |
-| `SHOPIFY_API_VERSION`    | `2024-01` or later                                      |
+| `SHOPIFY_API_VERSION`    | `2026-07` or later                                      |
 | `SHOPIFY_WEBHOOK_SECRET` | Signing secret used to verify webhooks                  |
 | `CLIENT_ORIGIN`          | Frontend URL for CORS (`http://localhost:5173`)         |
 
@@ -189,7 +189,7 @@ Shopify shows a **signing secret** on that page — put it in `.env` as
 ### Option B — Admin REST API
 ```bash
 curl -X POST \
-  "https://your-store.myshopify.com/admin/api/2024-01/webhooks.json" \
+  "https://your-store.myshopify.com/admin/api/2026-07/webhooks.json" \
   -H "X-Shopify-Access-Token: shpat_xxx" \
   -H "Content-Type: application/json" \
   -d '{

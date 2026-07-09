@@ -5,11 +5,15 @@
 
 const axios = require('axios');
 
-// Build the base URL once, e.g. https://my-store.myshopify.com/admin/api/2024-01
+// Single source of truth for the Admin API version. Shopify only supports a
+// version for 12 months, so this must be kept current. The same value is used
+// for REST calls here and for the webhook we register (see README).
+const API_VERSION = process.env.SHOPIFY_API_VERSION || '2026-07';
+
+// Build the base URL once, e.g. https://my-store.myshopify.com/admin/api/2026-07
 function getBaseUrl() {
   const store = process.env.SHOPIFY_STORE_URL;
-  const version = process.env.SHOPIFY_API_VERSION || '2024-01';
-  return `https://${store}/admin/api/${version}`;
+  return `https://${store}/admin/api/${API_VERSION}`;
 }
 
 // A pre-configured axios client. Shopify authenticates Admin API requests
@@ -46,6 +50,7 @@ async function fetchOrders(limit = 50) {
 }
 
 module.exports = {
+  API_VERSION,
   fetchProducts,
   fetchOrders,
 };
