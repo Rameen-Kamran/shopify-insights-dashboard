@@ -6,6 +6,8 @@ bar chart, and a products table. It also receives **order-created webhooks** fro
 Shopify and stores those orders in MySQL.
 
 Built to be simple and readable — plain JavaScript, no TypeScript, no magic.
+## Dashboard
+<img width="792" height="502" alt="Screenshot" src="https://github.com/user-attachments/assets/d80d13e6-77a8-4230-afd3-4a47b74a8810" />
 
 ---
 
